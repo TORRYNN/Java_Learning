@@ -11,5 +11,6 @@ public class Question1 {
         } else {
             System.out.println(num + " is negative ");
         }
+        sc.close();
     }
 }
