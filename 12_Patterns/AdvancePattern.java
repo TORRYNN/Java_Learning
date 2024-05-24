@@ -70,7 +70,7 @@ public class AdvancePattern {
             }
             System.out.println();
         }
-        System.out.println("---------------------------- Pattern4 ----------------------------");
+        System.out.println("---------------------------- Pattern5 ----------------------------");
         // 1
         // 23
         // 345
@@ -84,5 +84,72 @@ public class AdvancePattern {
             System.out.println();
         }
 
+        System.out.println("---------------------------- Pattern6 ----------------------------");
+        // 1
+        // 23
+        // 345
+        // 4567
+        String pattern[] = new String[n];
+        for (int i = 0; i < n; i++) {
+            StringBuilder row = new StringBuilder();
+            int num = i + 1;
+            for (int j = 0; j <= i; j++) {
+                row.append(num);
+                num++;
+            }
+            pattern[i] = row.toString();
+        }
+        for (String row : pattern) {
+            System.out.println(row);
+        }
+
+        for (int i = 0; i < n; i++) {
+            int num = i + 1;
+
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = n; j > i; j--) {
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();
+
+        }
+        for (int i = 1; i <= n - 1; i++) {
+            int num = n - i;
+            for (int j = n - 1; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j <= i; j++) {
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();
+
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = 1; i < 2 * n; i++) {
+            int count = i;
+            if (i > n)
+                count = 2 * n - i;
+            for (int j = 0; j < count-1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                if (j == i) {
+                    System.out.print(count);
+                }
+            }
+            System.out.println();
+        }
     }
 }
