@@ -102,7 +102,16 @@ public class AdvancePattern {
         for (String row : pattern) {
             System.out.println(row);
         }
-
+        System.out.println("---------------------------- Pattern7 ----------------------------");
+        // 1 2 3 4 5
+        // 2 3 4 5
+        // 3 4 5
+        // 4 5
+        // 5
+        // 4 5
+        // 3 4 5
+        // 2 3 4 5
+        // 1 2 3 4 5
         for (int i = 0; i < n; i++) {
             int num = i + 1;
 
@@ -116,6 +125,7 @@ public class AdvancePattern {
             System.out.println();
 
         }
+
         for (int i = 1; i <= n - 1; i++) {
             int num = n - i;
             for (int j = n - 1; j > i; j--) {
@@ -128,6 +138,12 @@ public class AdvancePattern {
             System.out.println();
 
         }
+        System.out.println("---------------------------- Pattern9 ----------------------------");
+        // *****
+        // ****
+        // ***
+        // **
+        // *
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print(" ");
@@ -137,11 +153,21 @@ public class AdvancePattern {
             }
             System.out.println();
         }
+        System.out.println("---------------------------- Pattern10 ----------------------------");
+        // 1
+        // 2
+        // 3
+        // 4
+        // 5
+        // 4
+        // 3
+        // 2
+        // 1
         for (int i = 1; i < 2 * n; i++) {
             int count = i;
             if (i > n)
                 count = 2 * n - i;
-            for (int j = 0; j < count-1; j++) {
+            for (int j = 0; j < count - 1; j++) {
                 System.out.print(" ");
             }
             for (int j = 1; j <= i; j++) {
