@@ -33,3 +33,5 @@ public class TrappedWater {
         System.out.println(trap(arr));
     }
 }
+
+// Time Complexity= O(n)      Space Complexity=O(n)
