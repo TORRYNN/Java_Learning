@@ -1,6 +1,5 @@
 // Write a Java Method to compute the average of three numbers;
 
-import java.util.Scanner;
 
 public class Question1 {
     public static int avg(int a, int b, int c) {
