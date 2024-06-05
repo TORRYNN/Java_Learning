@@ -28,7 +28,6 @@ public class Question5 {
         ArrayList<Integer> num = new ArrayList<>(Arrays.asList(-1, 0, 1, 2, -1, -4));
 
         System.out.println(findTriplets(num));
-
     }
 
 }
