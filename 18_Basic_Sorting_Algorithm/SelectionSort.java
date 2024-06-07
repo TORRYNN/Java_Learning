@@ -19,7 +19,7 @@ public class SelectionSort {
         }
         return arr;
 
-        // Time Complexity=O(n2) Space Comlexity=O(1)
+        // Time Complexity=O(n2)                    Space Comlexity=O()
     }
 
     public static void main(String[] args) {
