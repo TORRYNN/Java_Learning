@@ -37,6 +37,7 @@ public class LearnStringBuilder {
                     sb.append(ch);
                 }
             }
+           
         }
         return sb.toString();
 
