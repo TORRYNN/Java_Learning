@@ -35,7 +35,7 @@ public class MaxSubarraySum {
                 currentSum = i == 0 ? prefix[j] : prefix[j] - prefix[i - 1];
             }
             maxSum = Math.max(maxSum, currentSum);
-        }
+        } 
         System.out.println("Max sum using prefix array = " + maxSum);
     }
 
