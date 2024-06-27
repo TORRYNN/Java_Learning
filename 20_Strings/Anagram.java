@@ -31,6 +31,8 @@ public class Anagram {
 
     // Second Approach using 2 hashmap
     public static boolean areAnagram1(String str1, String str2) {
+        if (str1.length() != str2.length())
+            return false;
         HashMap<Character, Integer> hmap1 = new HashMap<>();
         HashMap<Character, Integer> hmap2 = new HashMap<>();
 
@@ -52,10 +54,42 @@ public class Anagram {
         return hmap1.equals(hmap2);
 
     }
-    // Time Complexity: O(N )
+    // Time Complexity: O(n )
     // Space Comlexity: O(k) where k is the number of distinct characters in the strings.
 
 
+    // Approach 3 Using a single hashmap
+    public static boolean areAnagram2(String str1, String str2){
+        if(str1.length()==str2.length())
+            return false;
+        
+        HashMap<Character,Integer> hashMap=new HashMap<>();
+        // counting the character in hashmap 1
+        for(char c:str1.toCharArray()){
+            if(hashMap.containsKey(c)){
+                hashMap.put(c,hashMap.get(c)+1);
+            }
+            else{
+                hashMap.put(c,1);
+            }
+        }
+        for (char c : str2.toCharArray()) {
+            // if hashmap not containing the character c
+             if (!hashMap.containsKey(c)){
+                return false;
+            }
+            hashMap.put(c, hashMap.get(c) -1);
+            if(hashMap.get(c)==0){
+                hashMap.remove(c);
+            }
+        }
+        return hashMap.isEmpty();
+        
+    }
+
+    // Time Complexity: O(n ) bcz it process each character in both the strings exactly once.
+    // Space Comlexity: O(k) where k is the number of distinct characters in the
+    // strings.
 
     /* Driver Code */
     public static void main(String args[]) {
