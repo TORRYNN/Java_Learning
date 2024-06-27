@@ -4,30 +4,30 @@ import java.util.Collections;
 
 public class Anagram {
 
-    static boolean areAnagram(char[] str1, char[] str2) {
-        // Get lengths of both strings
+    public static boolean areAnagram(char[] str1, char[] str2) {
+        // Calculating the length of the string
         int n1 = str1.length;
         int n2 = str2.length;
-
-        // If length of both strings is not same,
-        // then they cannot be anagram
-        if (n1 != n2)
+        // If the length of the string is not equal then they cannot be anagram.
+        if (n1 != n2) {
             return false;
+        }
 
-        // Sort both strings
+        // Sorting the String
         Arrays.sort(str1);
         Arrays.sort(str2);
 
-        // Compare sorted strings
-        for (int i = 0; i < n1; i++)
-            if (str1[i] != str2[i])
+        for (int i = 0; i < n1; i++) {
+            // If the char are not equal then they cannot be anagram
+            if (str1[i] != str2[i]) {
                 return false;
-
+            }
+        }
         return true;
 
-        // Time Complexity: O(N * logN), For sorting.
-        // Space Comlexity: O(1) as it is using constant extra space
     }
+    // Time Complexity: O(N * logN), For sorting.
+    // Space Comlexity: O(1) as it is using constant extra space
 
     /* Driver Code */
     public static void main(String args[]) {
