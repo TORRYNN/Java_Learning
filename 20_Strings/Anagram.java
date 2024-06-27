@@ -1,6 +1,5 @@
-import java.io.*;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.HashMap;
 
 public class Anagram {
 
@@ -29,6 +28,35 @@ public class Anagram {
     // Time Complexity: O(N * logN), For sorting.
     // Space Comlexity: O(1) as it is using constant extra space
 
+
+    // Second Approach using 2 hashmap
+    public static boolean areAnagram1(String str1, String str2) {
+        HashMap<Character, Integer> hmap1 = new HashMap<>();
+        HashMap<Character, Integer> hmap2 = new HashMap<>();
+
+        for (char c : str1.toCharArray()) {
+            if (hmap1.containsKey(c)) {
+                hmap1.put(c, hmap1.get(c) + 1);
+            } else {
+                hmap1.put(c, 1);
+            }
+        }
+        for (char c : str2.toCharArray()) {
+            if (hmap2.containsKey(c)) {
+                hmap2.put(c, hmap2.get(c) + 1);
+            } else {
+                hmap2.put(c, 1);
+            }
+        }
+
+        return hmap1.equals(hmap2);
+
+    }
+    // Time Complexity: O(N )
+    // Space Comlexity: O(k) where k is the number of distinct characters in the strings.
+
+
+
     /* Driver Code */
     public static void main(String args[]) {
         char str1[] = { 'g', 'r', 'a', 'm' };
@@ -41,5 +69,13 @@ public class Anagram {
         else
             System.out.println("The two strings are not"
                     + " anagram of each other");
+
+        String string1 = "listen";
+        String string2 = "silent";
+
+        if (areAnagram1(string1, string2))
+            System.out.println(string1 + " and " + string2 + " are anagrams.");
+        else
+            System.out.println(string1 + " and " + string2 + " are not anagrams.");
     }
 }
