@@ -42,6 +42,13 @@ class ComplexNumber{
         return new ComplexNumber(realSum, imagSum);
     }
 
+    ComplexNumber subtract(ComplexNumber obj){
+        int realsub=this.real - obj.real;
+        int imagsub=this.imag - obj.imag;
+
+        return new ComplexNumber(realsub, imagsub);
+    }
+
     void display(){
         System.out.println(this.real + " + " + this.imag + "i");
     }
