@@ -1,9 +1,9 @@
 public class FirstOccurence {
-    public static boolean isFirstOccurence(int arr[], int key, int i) {
-        if (i == arr.length - 1)
-            return false;
+    public static int isFirstOccurence(int arr[], int key, int i) {
+        if (i == arr.length)
+            return -1;
         if (arr[i] == key)
-            return true;
+            return i;
 
         return isFirstOccurence(arr, key, i + 1);
 
