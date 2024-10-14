@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/CODING/Codding/ADA",
-      "program": "d:/CODING/Codding/ADA/build/Debug/outDebug",
+      "cwd": "d:/R2P/CODING/Apna_College_Java/25_Divide and Conquer",
+      "program": "d:/R2P/CODING/Apna_College_Java/25_Divide and Conquer/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
