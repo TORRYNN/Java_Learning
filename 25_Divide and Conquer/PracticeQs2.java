@@ -4,7 +4,7 @@ public class PracticeQs2 {
     // largest count.
     // Time Complexity:O(n2);
     public static int MajorityElement(int[] nums) {
-        // We know that majorit count we be more than half of the element.
+        // We know that majority count we be more than half of the element.
         int majoritycount = nums.length / 2;
 
         for (int i = 0; i < nums.length; i++) {
@@ -55,7 +55,7 @@ public class PracticeQs2 {
     }
 
     public static void main(String[] args) {
-        int nums[] = { 2, 2, 1, 1, 1, 1, 1, 2, 2 };
+        int nums[] = { 2, 2, 1, 1, 1, 1, 1, 3, 7 };
         System.out.println(MajorityElement(nums));
         System.out.println(majoritElementCount(nums, 0, nums.length - 1));
     }
