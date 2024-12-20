@@ -1,11 +1,16 @@
 
 public class MaxSubarraySum {
     public static void maxSum(int[] arr) {
+        // Currentsum variable will track this currentsum of the value
         int currentSum = 0;
+        // we intialised the max sum with the minimum value.
         int maxSum = Integer.MIN_VALUE;
+        // this loop is for all the possible starting indices
         for (int i = 0; i < arr.length; i++) {
+            // this loop is for ending indices
             for (int j = i; j < arr.length; j++) {
                 currentSum = 0;
+                // This loop is for calculating the currentsum
                 for (int k = i; k <= j; k++) {
                     currentSum += arr[k];
                 }
@@ -21,7 +26,7 @@ public class MaxSubarraySum {
 
     }
     // -----------------------------------------------------------------
-
+    // this is prefix sum approach in this approach first we create an array with cumulative sum
     public static void maxsum1(int[] arr) {
         int currentSum = 0;
         int maxSum = Integer.MIN_VALUE;
