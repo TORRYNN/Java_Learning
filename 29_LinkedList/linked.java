@@ -155,11 +155,10 @@ public class linked {
         }
         return idx + 1;
     }
+
     public int rSearch(int key) {
         return helper(head, key);
     }
-
-=
 
     // Iterative Approach with Time Complexity is O(n);
     public void reverse() {
@@ -234,35 +233,108 @@ public class linked {
 
     }
 
+    // * -----------------------------------------------------------------------------------
 
+    private Node findMid(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    private Node merge(Node lHead, Node rHead) {
+        Node dummyHead = new Node(-1);
+        Node mrg = dummyHead;
+
+        while (lHead != null && rHead != null) {
+            if (lHead.data <= rHead.data) {
+                mrg.next = lHead;
+                mrg = mrg.next;
+                lHead = lHead.next;
+            } else {
+                mrg.next = rHead;
+                mrg = mrg.next;
+                rHead = rHead.next;
+            }
+
+        }
+
+        while (lHead != null) {
+            mrg.next = lHead;
+            mrg = mrg.next;
+            lHead = lHead.next;
+        }
+        while (rHead != null) {
+            mrg.next = rHead;
+            mrg = mrg.next;
+            rHead = rHead.next;
+        }
+
+        return dummyHead.next;
+    }
+
+    public Node mergeSort(Node head) {
+        // Base Condtion
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // Calculate mid
+
+        Node midNode = findMid(head);
+
+        // Recursive call
+        Node right = midNode.next;
+        midNode.next = null;
+        Node newLeft = mergeSort(head);
+        Node newright = mergeSort(right);
+
+        // merge Function
+        return merge(newLeft, newright);
+    }
 
     public static void main(String[] args) {
         linked ll = new linked();
-        ll.print();
-        ll.addFirst(2);
-        ll.print();
+        // ll.print();
+        // ll.addFirst(2);
+        // ll.print();
+        // ll.addFirst(1);
+        // ll.print();
+        // ll.addLast(3);
+        // ll.print();
+        // ll.addLast(4);
+        // ll.print();
+        // ll.add(3, 9);
+        // ll.print();
+        // System.out.println(ll.size);
+        // System.out.println(ll.removeFirst());
+        // ll.print();
+        // System.out.println(ll.removeLast());
+        // ll.print();
+        // System.out.println(ll.size);
+        // ll.print();
+        // System.out.println(ll.isearch(3));
+        // System.out.println(ll.rSearch(3));
+        // ll.reverse();
+        // ll.print();
+        // ll.deleteNthFromEnd(1);
+        // ll.print();
+        // ll.deleteNthFromEnd2(1);
+        // ll.print();
+
         ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(3);
+        ll.addFirst(4);
+        ll.addFirst(5);
         ll.print();
-        ll.addLast(3);
-        ll.print();
-        ll.addLast(4);
-        ll.print();
-        ll.add(3, 9);
-        ll.print();
-        System.out.println(ll.size);
-        System.out.println(ll.removeFirst());
-        ll.print();
-        System.out.println(ll.removeLast());
-        ll.print();
-        System.out.println(ll.size);
-        ll.print();
-        System.out.println(ll.isearch(3));
-        System.out.println(ll.rSearch(3));
-        ll.reverse();
-        ll.print();
-        ll.deleteNthFromEnd(1);
-        ll.print();
-        ll.deleteNthFromEnd2(1);
+
+        ll.head = ll.mergeSort(ll.head);
         ll.print();
     }
 }
